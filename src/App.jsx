@@ -1,37 +1,26 @@
+import {useState, useEffect} from 'react'  
 import Header from './Components/Header';
-import SearchItem from './Components/searchItem';
 import AddItem from './Components/AddItem';
+import SearchItem from './Components/searchItem';
 import Content from './Components/Content';
 import Footer from './Components/Footer';
-import {useState} from 'react'  
 
 function App() {
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppingList')))
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppingList')) || [])
 
   const [search, setSearch] = useState("")
 
-  const setAndSaveItems = (updatedItemList) => {
-    setItems(updatedItemList)
-    localStorage.setItem('shoppingList', JSON.stringify(updatedItemList))
-  }
-
-  const handleCheck = (id) => {
-    const updatedItemList = items.map((item) => (item.id === id ? {...item, checked: !item.checked} : item))
-    setAndSaveItems(updatedItemList)
-  }
-  
-  const handleDelete = (id) => {
-    const updatedItemList = items.filter((item) =>  item.id !== id )
-    setAndSaveItems(updatedItemList)
-  }
+  useEffect(() => {
+    localStorage.setItem('shoppingList', JSON.stringify(items))
+  }, [items])
 
   return (
     <div className='App'>
       <Header />
       
       <AddItem 
-        search = {search}
-        setSearch={setSearch}
+        items = {items}
+        setItems={setItems}
       />
 
       < SearchItem 
@@ -40,9 +29,10 @@ function App() {
       />
 
       <Content 
-        items= {items.filter(item => (item.itemDesc.toLowerCase()).includes(search.toLocaleLowerCase()))} 
-        handleCheck= {handleCheck} 
-        handleDelete= {handleDelete} 
+        items= {search ?  (
+          items.filter(item => (item.itemDesc.toLowerCase()).includes(search.toLocaleLowerCase()))
+          ) : items} 
+        setItems= {setItems} 
       />
       
       <Footer length = {items.length}/>

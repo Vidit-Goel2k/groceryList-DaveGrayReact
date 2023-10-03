@@ -2,7 +2,7 @@ import { FaPlus } from "react-icons/fa";
 import { useState } from "react";
 
 
-const AddItem = ({items, setAndSaveItems}) => {
+const AddItem = ({items, setItems}) => {
 
   // console.log(items)
   const [newItem, setNewItem] = useState('')
@@ -15,7 +15,7 @@ const AddItem = ({items, setAndSaveItems}) => {
       itemDesc: item,
     }
     const listItem = [...items, newListItem]
-    setAndSaveItems(listItem)
+    setItems(listItem)
   }
 
   const handleSubmit = (e) => {

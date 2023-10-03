@@ -1,0 +1,24 @@
+{
+    "items":[
+        {
+            "id": 1,
+            "checked": false,
+            "itemDesc":"Milk"
+        },
+        {
+            "id": 2,
+            "checked": false,
+            "itemDesc":"Chips"
+        },
+        {
+            "id": 3,
+            "checked": false,
+            "itemDesc":"Almonds"
+        },
+        {
+            "id": 4,
+            "checked": false,
+            "itemDesc":"Pizza"
+        }
+    ]
+}
