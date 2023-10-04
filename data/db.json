@@ -1,24 +1,34 @@
 {
-    "items":[
-        {
-            "id": 1,
-            "checked": false,
-            "itemDesc":"Milk"
-        },
-        {
-            "id": 2,
-            "checked": false,
-            "itemDesc":"Chips"
-        },
-        {
-            "id": 3,
-            "checked": false,
-            "itemDesc":"Almonds"
-        },
-        {
-            "id": 4,
-            "checked": false,
-            "itemDesc":"Pizza"
-        }
-    ]
+  "items": [
+    {
+      "id": 1,
+      "checked": false,
+      "itemDesc": "Milk"
+    },
+    {
+      "id": 2,
+      "checked": false,
+      "itemDesc": "Chips"
+    },
+    {
+      "id": 3,
+      "checked": false,
+      "itemDesc": "Almonds"
+    },
+    {
+      "id": 4,
+      "checked": false,
+      "itemDesc": "Pizza"
+    },
+    {
+      "id": 5,
+      "checked": false,
+      "itemDesc": "Cookies"
+    },
+    {
+      "id": 6,
+      "checked": false,
+      "itemDesc": "Candy"
+    }
+  ]
 }
